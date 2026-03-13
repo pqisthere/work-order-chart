@@ -12,15 +12,21 @@ export const useOrderStore = defineStore('order', {
         if (!map[item.project]) map[item.project] = 0
         map[item.project] += item.hours
       })
+      // 按工时从高到低排序
+      const entries = Object.entries(map).sort((a, b) => b[1] - a[1])
       return {
-        projects: Object.keys(map),
-        hours: Object.values(map),
+        projects: entries.map((e) => e[0]),
+        hours: entries.map((e) => e[1]),
       }
     },
   },
   actions: {
     removeOrder(id) {
       this.list = this.list.filter((o) => o.id !== id)
+    },
+    /** 恢复所有工单列表为 orders.js 中的初始数据（测试用） */
+    resetOrders() {
+      this.list = [...MOCK_ORDERS]
     },
   },
 })

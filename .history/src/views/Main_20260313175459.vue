@@ -4,7 +4,7 @@
     <div class="header">
       <h1>工单管理</h1>
       <div class="header-actions">
-        <a-button type="link" @click="resetOrders">测试：恢复初始数据</a-button>
+        <a-button type="link" @click="resetOrders">测试</a-button>
         <a-button type="link" @click="goLogin">退出登录</a-button>
       </div>
     </div>
