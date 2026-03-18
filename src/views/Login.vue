@@ -45,7 +45,6 @@ function onSubmit() {
 <style lang="less" scoped>
 .login-page {
   min-height: 100vh;
-  min-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;

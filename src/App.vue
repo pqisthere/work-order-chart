@@ -8,7 +8,7 @@
 <style lang="less">
 #app {
   min-height: 100vh;
-  min-width: 350px;
-  overflow-x: auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 </style>

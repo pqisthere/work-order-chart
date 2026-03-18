@@ -14,6 +14,7 @@
         :columns="columns"
         :data-source="orderStore.list"
         :pagination="false"
+        :scroll="{ x: 'max-content' }"
         row-key="id"
       >
         <template #bodyCell="{ column, record }">
@@ -126,7 +127,6 @@ onBeforeUnmount(() => {
 
 <style lang="less" scoped>
 .main-page {
-  min-width: 320px;
   max-width: 1000px;
   margin: 0 auto;
   padding: clamp(12px, 4vw, 24px);
@@ -149,10 +149,30 @@ onBeforeUnmount(() => {
 }
 .table-card {
   margin-bottom: 24px;
-  overflow-x: auto;
 }
 .chart-container {
   height: clamp(240px, 40vw, 320px);
   min-height: 240px;
+}
+
+@media (max-width: 480px) {
+  .main-page {
+    padding: 12px;
+  }
+  .header {
+    align-items: flex-start;
+  }
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .header-actions :deep(.ant-btn) {
+    padding: 0 8px;
+  }
+  .chart-container {
+    height: 240px;
+    min-height: 240px;
+  }
 }
 </style>
